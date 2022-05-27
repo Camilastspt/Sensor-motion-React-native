@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import Torch from 'react-native-torch';
 import RNShake from 'react-native-shake';
 
@@ -13,7 +13,6 @@ const App = () => {
   }, [toggle]);
 
   useEffect(() => {
-
     const subscription = RNShake.addListener(() => {
       setToggle(oldToggle => !oldToggle);
     });
@@ -40,6 +39,7 @@ const App = () => {
               : require('./assets/icons/logo-dio-white.png')
           }
         />
+        <Text style={style.textonome}> Camila Santos</Text>
       </TouchableOpacity>
     </View>
   );
@@ -78,5 +78,14 @@ const style = StyleSheet.create({
     alignSelf: 'center',
     width: 250,
     height: 250,
+  },
+  textonome: {
+    alignSelf: 'center',
+    alignItems: 'center',
+    Color: 'pink',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    color: 'pink',
+    fontSize: 50,
   },
 });
